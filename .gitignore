@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+*~
+
+# Obsidian
+.obsidian/
+
+# Lokales / Temporäres
+*.log
+*.tmp
+node_modules/
+
+# Nicht ins Repo: die Anleitung liegt bewusst eine Ebene höher
+Anleitung_Website_online_stellen.md

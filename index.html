@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Kunst, vorbereitet zu sein – Praxisnahe Krisenvorsorge für Frauen</title>
+<meta name="description" content="Krisenvorsorge für Frauen, ohne Panik und ohne Bunker im Keller. Praxisnah, alltagstauglich und mit Platz für Lebensrealitäten, die in klassischen Krisenratgebern fehlen.">
+<meta name="theme-color" content="#2a2724">
+<link rel="canonical" href="https://krisenvorsorgefrauen.de/">
+
+<!-- Social-Vorschau -->
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://krisenvorsorgefrauen.de/">
+<meta property="og:title" content="Die Kunst, vorbereitet zu sein">
+<meta property="og:description" content="Praxisnahe Krisenvorsorge für Frauen. Ohne Panik, ohne Bunker im Keller.">
+<meta property="og:image" content="https://krisenvorsorgefrauen.de/cover-front-web.jpg">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+/* =================================================================
+   SCHRIFTEN
+
+   Beide Schriften liegen im Unterordner fonts/ und werden vom
+   eigenen Server geladen, nicht von Google. Das ist Absicht:
+   Google Fonts direkt einzubinden hat in Deutschland Abmahnungen
+   ausgeloest, weil dabei die IP-Adresse der Besucherin in die USA
+   geht. Gilt genauso fuer Skripte und Icons: nichts von fremden
+   Servern nachladen.
+
+   Benoetigte Dateien (aus gwfh.mranftl.com, Format woff2, Zeichensatz
+   latin + latin-ext), nach dem Download genau so umbenennen:
+
+     fonts/playfair-display-400.woff2
+     fonts/playfair-display-500.woff2
+     fonts/montserrat-400.woff2
+     fonts/montserrat-600.woff2
+
+   Solange die Dateien fehlen, greift der Fallback unten und die
+   Seite sieht ordentlich aus, nur nicht ganz so hochwertig.
+   ================================================================= */
+@font-face{
+  font-family:"Playfair Display";font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/playfair-display-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Playfair Display";font-style:normal;font-weight:500;font-display:swap;
+  src:url("fonts/playfair-display-500.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Montserrat";font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/montserrat-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Montserrat";font-style:normal;font-weight:600;font-display:swap;
+  src:url("fonts/montserrat-600.woff2") format("woff2");
+}
+
+/* =================================================================
+   FARBEN
+
+   Auszug aus tokens.css im Designsystem
+   (Marketing Kit/02 Designsystem/Code/tokens.css), reduziert auf
+   das, was diese Seite wirklich braucht. Die Namen und Werte sind
+   dort wortgleich, damit Website, Grafiken und die Vorina-App
+   dieselbe Farbsprache sprechen. Wer eine Farbe aendert, aendert
+   sie dort und hier.
+
+   Zwei Ebenen, und das ist der eigentliche Punkt:
+   ROHFARBEN sagen, wie etwas aussieht. Nur hier stehen Hexwerte.
+   ROLLEN sagen, was eine Farbe tut. Der Rest der Datei benutzt
+   ausschliesslich Rollen.
+   ================================================================= */
+:root{
+  /* ---- Rohfarben, vom Coverfoto abgenommen: das warme Anthrazit
+          der Wand, das Salbeigruen der Pflanzen, die Koralle des
+          Siegels, das Cremeweiss des Lichts. ---- */
+  --nacht:#2A2724;         --nacht-weich:#38332E;
+  --tinte:#2F2B27;         --tinte-leise:#6F665C;
+  --weiss:#FFFFFF;         --creme:#FAF6F0;        --papier:#F2EBE1;
+  --linie:#E3D9CB;         --sand:#E0CFB8;         --sand-tief:#CDB79A;
+  --koralle:#F2908F;       --koralle-tief:#B85956;
+  --koralle-text:#A34F4C;  --koralle-nacht:#8F4340;
+  --salbei:#8A9A7B;        --salbei-tief:#5F6E52;
+
+  /* ---- Rollen, hell. Ab hier steht kein Hexwert mehr. ---- */
+  --grund:var(--creme);              --grund-alt:var(--papier);
+  --flaeche:var(--weiss);
+  --text:var(--tinte);               --text-leise:var(--tinte-leise);
+  --rand:var(--linie);               --rand-stark:var(--sand-tief);
+  --akzent:var(--koralle-tief);      --auf-akzent:var(--weiss);
+  --akzent-gedrueckt:var(--koralle-nacht);
+  --ruhe:var(--salbei-tief);         --icon-farbe:var(--ruhe);
+
+  /* Akzent als TEXT ist eine eigene Rolle, nicht dieselbe Farbe wie
+     der Akzent als Flaeche. --koralle-tief schafft auf Creme nur
+     4,24:1 und faellt damit durch die Lesbarkeitsschwelle von 4,5:1.
+     --koralle-text kommt auf 4,91:1. Auf dem etwas dunkleren Papier
+     reicht auch das nicht ganz (4,46:1), deshalb schaltet
+     .band-papier weiter unten eine Stufe tiefer. */
+  --akzent-text:var(--koralle-text);
+
+  --max:1120px;
+  --schmal:720px;
+  /* ---- Radien, Namen wie im Designsystem ---- */
+  --ecke-bild:2px; --ecke-feld:4px; --ecke-klein:8px;
+  --ecke-mittel:14px; --ecke-blatt:24px; --ecke-pille:999px;
+  --display:"Playfair Display","Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --kurve:cubic-bezier(.16,.68,.32,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  margin:0;background:var(--grund);color:var(--text);
+  font-family:var(--sans);font-size:17px;line-height:1.75;font-weight:400;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--akzent-text)}
+:focus-visible{outline:3px solid var(--koralle);outline-offset:3px;border-radius:var(--ecke-bild)}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+.wrap-schmal{max-width:var(--schmal);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+section{padding:clamp(72px,10vw,124px) 0}
+
+h1,h2{font-family:var(--display);font-weight:400;line-height:1.12;margin:0 0 .55em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem)}
+h2{font-size:clamp(1.9rem,4.4vw,3rem)}
+h3{font-family:var(--sans);font-size:1.03rem;font-weight:600;line-height:1.4;margin:0 0 .5em;letter-spacing:.005em}
+p{margin:0 0 1.15em;max-width:64ch}
+p:last-child{margin-bottom:0}
+
+.leise{color:var(--text-leise)}
+.klein{font-size:.88rem;line-height:1.65}
+.gross{font-size:clamp(1.12rem,1.9vw,1.32rem);line-height:1.65}
+
+/* Kleine Ueberschrift ueber der grossen, wie das Kapitelbaendchen im Buch */
+.eyebrow{
+  font-size:.74rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--akzent-text);margin:0 0 1.4em;display:flex;align-items:center;gap:12px;
+}
+.eyebrow::after{content:"";flex:1;max-width:64px;height:1px;background:currentColor;opacity:.35}
+.dunkel .eyebrow{color:var(--koralle)}
+
+/* =================== LESEFORTSCHRITT =================== */
+#fortschritt{
+  position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
+  background:linear-gradient(90deg,var(--koralle),var(--akzent));
+  transition:width .1s linear;
+}
+
+/* =================== SPRUNGLINK =================== */
+.sprung{
+  position:absolute;left:-9999px;top:0;z-index:70;
+  background:var(--nacht);color:#fff;padding:14px 22px;border-radius:0 0 8px 0;text-decoration:none;
+}
+.sprung:focus{left:0}
+
+/* =================== KOPFZEILE =================== */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,246,240,.86);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .35s var(--kurve),box-shadow .35s var(--kurve),background .35s var(--kurve);
+}
+header.gescrollt{
+  border-bottom-color:var(--rand);
+  box-shadow:0 6px 28px -18px rgba(47,43,39,.5);
+}
+.kopf{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  max-width:var(--max);margin:0 auto;padding:18px clamp(20px,5vw,40px);
+  transition:padding .35s var(--kurve);
+}
+header.gescrollt .kopf{padding-top:11px;padding-bottom:11px}
+.marke{
+  font-family:var(--display);font-size:1.08rem;line-height:1.25;
+  color:var(--text);text-decoration:none;letter-spacing:.005em;
+}
+.marke b{font-weight:400;color:var(--akzent-text);font-style:italic}
+.kopf nav{display:flex;gap:clamp(14px,2.6vw,30px);flex-wrap:wrap}
+.kopf nav a{
+  position:relative;color:var(--text);text-decoration:none;
+  font-size:.83rem;font-weight:600;letter-spacing:.05em;padding:4px 0;
+}
+.kopf nav a::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;
+  background:var(--akzent);transform:scaleX(0);transform-origin:right;
+  transition:transform .38s var(--kurve);
+}
+.kopf nav a:hover::after,.kopf nav a:focus-visible::after{transform:scaleX(1);transform-origin:left}
+
+/* =================== HERO =================== */
+.hero{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:var(--nacht);color:var(--creme);
+  padding:clamp(64px,9vw,110px) 0 clamp(80px,11vw,130px);
+}
+/* Unscharfes Coverfoto als warme Lichtstimmung im Hintergrund.
+   Es wird mit 72px weichgezeichnet - da genuegt ein 60px breites
+   Bild vollkommen. Frueher hing hier das volle Cover mit 148 KB,
+   jetzt sind es 1,1 KB, und sichtbar ist derselbe Lichtschleier. */
+.hero::before{
+  content:"";position:absolute;inset:-12%;z-index:-2;
+  background:url("bilder/hero-licht.webp") center 28% / cover no-repeat;
+  filter:blur(72px) saturate(115%);opacity:.5;transform:scale(1.15);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(120% 90% at 78% 22%, rgba(242,144,143,.16), transparent 62%),
+    linear-gradient(180deg, rgba(42,39,36,.74) 0%, rgba(42,39,36,.88) 55%, var(--nacht) 100%);
+}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(46px,7vw,72px);align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.08fr .92fr;gap:clamp(48px,6vw,80px)}}
+
+.hero h1{margin-bottom:.28em;color:#fff}
+.hero h1 span{display:block}
+/* Koralle-Zeile wie auf dem Cover */
+.hero h1 em{font-style:normal;color:var(--koralle);display:block}
+.hero .unter{
+  font-size:.82rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(250,246,240,.62);margin-bottom:1.7em;max-width:none;
+}
+.hero .anriss{
+  font-family:var(--display);font-size:clamp(1.24rem,2.5vw,1.6rem);line-height:1.5;
+  color:rgba(250,246,240,.94);max-width:26ch;margin-bottom:0;
+}
+
+/* ---- Buch-Mockup im Hero -------------------------------------------
+   Ein fertiges Produktfoto, kein nachgebautes Buch. Das 3D-Objekt,
+   das hier bis zum 10.08. stand, wog 2,3 MB fuer eine Drehung, die
+   kaum jemand benutzt hat; das Mockup wiegt 65 KB und zeigt das Buch
+   in einer Hand, was mehr ueber das Buch erzaehlt als jede Rotation.
+
+   AUSTAUSCHEN: neue Datei nach bilder/ legen, unten im Hero src,
+   width und height anpassen. Sonst ist nichts zu tun - das Seiten-
+   verhaeltnis ergibt sich aus den beiden Attributen von selbst. */
+.cover-buehne{display:flex;justify-content:center;perspective:1400px;position:relative}
+.buch-mockup{
+  --neigex:0deg;--neigey:0deg;
+  margin:0;position:relative;width:min(390px,86%);
+  transform:rotateX(var(--neigex)) rotateY(var(--neigey));
+  transition:transform .5s var(--kurve);
+}
+.buch-mockup img{
+  border-radius:var(--ecke-mittel);
+  box-shadow:
+    0 2px 4px rgba(0,0,0,.3),
+    0 20px 44px -16px rgba(0,0,0,.6),
+    0 56px 90px -40px rgba(0,0,0,.7);
+}
+/* Weicher Lichtschimmer, damit das helle Foto nicht als Rechteck
+   auf dem dunklen Hero klebt */
+.buch-mockup::after{
+  content:"";position:absolute;inset:0;border-radius:var(--ecke-mittel);pointer-events:none;
+  background:linear-gradient(112deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 38%);
+}
+
+/* =================== BUTTONS =================== */
+.aktionen{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:36px}
+.btn{
+  position:relative;display:inline-flex;align-items:center;gap:10px;
+  padding:16px 32px;border-radius:999px;
+  font-family:var(--sans);font-size:.94rem;font-weight:600;letter-spacing:.02em;
+  text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  transition:transform .28s var(--kurve),box-shadow .28s var(--kurve),background .28s var(--kurve),color .28s var(--kurve);
+}
+.btn-haupt{background:var(--akzent);color:var(--auf-akzent);box-shadow:0 10px 26px -12px rgba(184,89,86,.9)}
+.btn-haupt:hover{background:var(--akzent-gedrueckt);transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(184,89,86,.95)}
+.btn-hell{border-color:rgba(250,246,240,.4);color:var(--creme)}
+.btn-hell:hover{background:var(--creme);color:var(--nacht);transform:translateY(-2px)}
+.btn-rand{border-color:var(--text);color:var(--text)}
+.btn-rand:hover{background:var(--text);color:var(--creme);transform:translateY(-2px)}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none;box-shadow:none}
+
+.status{display:inline-flex;align-items:center;gap:10px;font-size:.85rem;color:rgba(250,246,240,.68)}
+.hero-preis{
+  margin:.7em 0 0;font-size:.85rem;letter-spacing:.02em;
+  color:rgba(250,246,240,.68);max-width:none;
+}
+.hero-preis b{font-weight:600;color:var(--creme)}
+.punkt{
+  position:relative;width:8px;height:8px;border-radius:50%;background:var(--koralle);flex:0 0 auto;
+}
+.punkt::after{
+  content:"";position:absolute;inset:0;border-radius:50%;background:var(--koralle);
+  animation:puls 2.4s ease-out infinite;
+}
+@keyframes puls{
+  0%{transform:scale(1);opacity:.7}
+  70%{transform:scale(3.2);opacity:0}
+  100%{opacity:0}
+}
+
+/* =================== BAENDER =================== */
+/* Das Papierband ist eine Spur dunkler als Creme. Der Akzent-Text
+   verliert dadurch Kontrast (4,46:1 statt 4,91:1), deshalb schaltet
+   das Band die Rolle eine Stufe tiefer: 5,76:1. Weil --akzent-text
+   eine Variable ist, zieht das automatisch durch alles nach, was im
+   Band steht - Eyebrows, Ziffern, Links. */
+.band-papier{background:var(--grund-alt);--akzent-text:var(--koralle-nacht)}
+.dunkel{background:var(--nacht);color:rgba(250,246,240,.86)}
+.dunkel h2{color:#fff}
+.dunkel a{color:var(--koralle)}
+
+/* Grosses Zitat als eigenes Band, in Salbei */
+.zitat-band{
+  background:var(--salbei-tief);color:#fff;
+  padding:clamp(60px,8vw,96px) 0;position:relative;overflow:hidden;
+}
+/* Das Anfuehrungszeichen sitzt mittig hinter dem Zitat, nicht mehr am
+   linken Rand: sonst stand der Satz als schmale Spalte links und die
+   rechte Haelfte des Bandes war leer. */
+.zitat-band::before{
+  content:"\201E";position:absolute;left:50%;top:-.2em;transform:translateX(-50%);
+  font-family:var(--display);font-size:clamp(14rem,26vw,24rem);line-height:1;
+  color:#fff;opacity:.07;pointer-events:none;
+}
+.zitat-band blockquote{margin:0;position:relative}
+.zitat-band p{
+  font-family:var(--display);font-size:clamp(1.6rem,3.9vw,2.7rem);line-height:1.3;
+  max-width:32ch;margin:0 auto;text-align:center;text-wrap:balance;
+}
+
+/* =================== KARTEN =================== */
+.karten{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.4vw,26px);margin-top:clamp(38px,5vw,56px)}
+@media(min-width:760px){.karten{grid-template-columns:repeat(3,1fr)}}
+.karte{
+  background:var(--grund);border:1px solid var(--rand);border-radius:16px;
+  padding:clamp(26px,3vw,34px);
+  transition:transform .4s var(--kurve),box-shadow .4s var(--kurve),border-color .4s var(--kurve);
+}
+.band-papier .karte{background:var(--flaeche)}
+.karte:hover{
+  transform:translateY(-5px);border-color:var(--rand-stark);
+  box-shadow:0 20px 42px -24px rgba(47,43,39,.45);
+}
+.karte-icon{
+  width:46px;height:46px;border-radius:12px;background:var(--sand);
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  color:var(--icon-farbe);
+}
+.karte-icon svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.karte p{font-size:.95rem;margin:0}
+
+/* =================== INHALT: DIE ACHT TEILE ALS KACHELN =================== */
+/* Vorher eine Liste mit Trennlinien. Acht gleich aussehende Zeilen
+   liest niemand zu Ende - als Kacheln kann man sich einen Teil
+   herausgreifen, und die Icons stammen aus demselben Satz, der auch
+   in der App laeuft (Marketing Kit/App-Logo Icon/assets/icons/).
+   Zwei Spalten sind das Maximum: bei vier wird der Satz unter der
+   Ueberschrift zu einer Schlucht aus drei Woertern je Zeile. */
+.kacheln{
+  list-style:none;margin:clamp(34px,4.5vw,48px) 0 0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:clamp(14px,1.8vw,20px);
+}
+@media(min-width:720px){.kacheln{grid-template-columns:1fr 1fr}}
+.kachel{
+  position:relative;overflow:hidden;
+  background:var(--flaeche);border:1px solid var(--rand);border-radius:var(--ecke-mittel);
+  padding:clamp(22px,2.6vw,28px);
+  transition:transform .4s var(--kurve),box-shadow .4s var(--kurve),border-color .4s var(--kurve);
+}
+.kachel:hover{
+  transform:translateY(-4px);border-color:var(--rand-stark);
+  box-shadow:0 20px 42px -26px rgba(47,43,39,.5);
+}
+/* Die roemische Ziffer sitzt gross und sehr leise in der Ecke. Sie ist
+   Schmuck - die Reihenfolge steht semantisch schon im <ol>. */
+.kachel-nr{
+  position:absolute;top:-.1em;right:.22em;
+  font-family:var(--display);font-size:4.6rem;line-height:1;
+  color:var(--akzent-text);opacity:.14;pointer-events:none;
+}
+.kachel-icon{
+  width:42px;height:42px;border-radius:var(--ecke-klein);background:var(--sand);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  color:var(--icon-farbe);
+}
+.kachel-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.kachel h3{margin:0 0 .4em}
+.kachel p{font-size:.92rem;line-height:1.6;margin:0;color:var(--text-leise);max-width:44ch}
+
+/* ---- Anhang-Teaser mit den aufgefaecherten Listen ---- */
+.teaser-anhang{
+  margin-top:clamp(34px,4.4vw,50px);
+  display:grid;grid-template-columns:1fr;gap:clamp(18px,3vw,44px);align-items:center;
+}
+@media(min-width:820px){.teaser-anhang{grid-template-columns:.95fr 1.05fr}}
+/* Der Graugrund des Mockups ist auf --papier umgefaerbt und geht damit
+   nahtlos ins Band ueber. Deshalb kein Rahmen, kein Radius, kein
+   Schatten: die Schatten der Blaetter stecken schon im Bild. */
+.teaser-anhang figure{margin:0}
+.teaser-anhang img{width:100%}
+.teaser-anhang h3{font-size:1.1rem;margin-bottom:.5em}
+/* :not(.eyebrow), sonst gewinnt diese Regel gegen die Eyebrow-Regel
+   weiter oben - gleiche Spezifitaet, aber spaeter in der Datei. */
+.teaser-anhang p:not(.eyebrow){font-size:.94rem;color:var(--text-leise);margin:0;max-width:50ch}
+.teaser-anhang .eyebrow{margin-bottom:1em}
+
+/* Die acht Kurzgeschichten, das Besondere am Buch */
+.geschichten{
+  margin-top:clamp(38px,5vw,54px);
+  background:var(--grund);border:1px solid var(--rand);
+  border-left:3px solid var(--koralle);border-radius:0 var(--ecke-mittel) var(--ecke-mittel) 0;
+  padding:clamp(24px,3vw,34px);
+}
+.geschichten h3{margin-bottom:.55em}
+.geschichten p{font-size:.95rem;max-width:62ch}
+.titelliste{
+  margin:1.2em 0 0;padding:0;list-style:none;
+  display:flex;flex-wrap:wrap;gap:8px 10px;
+}
+.titelliste li{
+  font-family:var(--display);font-size:.94rem;font-style:italic;
+  color:var(--text);background:var(--grund-alt);
+  border:1px solid var(--rand);border-radius:var(--ecke-pille);padding:5px 15px;
+}
+
+/* Eckdaten des Buches, eine Zeile */
+.eckdaten{margin-top:clamp(34px,4.4vw,46px)}
+.eckdaten b{font-weight:600;color:var(--text)}
+
+/* =================== FUER WEN =================== */
+/* Sechs Karten statt einer Liste mit Trennlinien, wie bei den
+   Kapiteln. Drei Spalten gehen hier, weil jeder Punkt nur ein bis
+   zwei Zeilen lang ist. */
+.fuerwen{
+  list-style:none;margin:clamp(30px,4vw,44px) 0 0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:clamp(14px,1.8vw,20px);
+}
+@media(min-width:640px){.fuerwen{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.fuerwen{grid-template-columns:repeat(3,1fr)}}
+.fuerwen li{
+  background:var(--flaeche);border:1px solid var(--rand);border-radius:var(--ecke-mittel);
+  padding:clamp(20px,2.4vw,26px);font-size:.97rem;line-height:1.55;
+  transition:transform .4s var(--kurve),box-shadow .4s var(--kurve),border-color .4s var(--kurve);
+}
+.fuerwen li:hover{
+  transform:translateY(-4px);border-color:var(--rand-stark);
+  box-shadow:0 20px 42px -26px rgba(47,43,39,.5);
+}
+/* Kurzer Akzentstrich statt eines Icons: fuer "Muetter", "kein Auto"
+   oder "knappes Budget" gibt der Icon-Satz nichts her, und ein
+   herbeigezwungenes Symbol waere schlechter als gar keines. */
+.fuerwen li::before{
+  content:"";display:block;width:28px;height:2px;border-radius:2px;
+  background:var(--akzent);margin-bottom:14px;
+}
+.fuerwen b{font-weight:600}
+
+/* =================== TEXT MIT BILD =================== */
+/* Eine Zeile aus Text und einem hochformatigen Bild. Der Zickzack
+   entsteht ueber .gedreht, das die Reihenfolge tauscht - aber nur
+   ab 900px. Darunter steht das Bild immer unter dem Text, sonst
+   waere die Lesereihenfolge am Handy vom Layout abhaengig. */
+.text-bild{display:grid;grid-template-columns:1fr;gap:clamp(34px,5vw,64px);align-items:center}
+@media(min-width:900px){
+  .text-bild{grid-template-columns:1.1fr .9fr}
+  .text-bild.gedreht > :first-child{order:2}
+}
+.bild{margin:0}
+.bild img{
+  width:100%;border-radius:var(--ecke-blatt);
+  box-shadow:0 22px 48px -30px rgba(47,43,39,.7);
+}
+.bild figcaption{
+  margin-top:10px;font-size:.74rem;letter-spacing:.06em;
+  color:var(--text-leise);opacity:.75;
+}
+
+/* =================== AUTORIN =================== */
+.autorin{display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,52px);align-items:start}
+@media(min-width:800px){.autorin{grid-template-columns:240px 1fr}}
+/* Das Foto ist bereits rund freigestellt und liegt auf Transparenz.
+   Der Kreis hier ist trotzdem noetig: er gibt den Sandton als Grund
+   und faengt eventuelle Rundungsfehler an der Kante ab. */
+.portraet{
+  width:100%;max-width:240px;aspect-ratio:1;border-radius:50%;overflow:hidden;
+  background:var(--sand);border:1px solid var(--rand-stark);
+  object-fit:cover;
+  box-shadow:0 18px 40px -26px rgba(47,43,39,.6);
+}
+.signatur{
+  font-family:var(--display);font-style:italic;font-size:1.5rem;
+  color:var(--akzent-text);margin-top:1.2em;
+}
+
+/* =================== BALD-BLOCK =================== */
+.bald{
+  border:1px solid rgba(250,246,240,.16);border-radius:20px;
+  padding:clamp(30px,4.5vw,50px);background:rgba(250,246,240,.04);
+}
+/* Cover links, Text rechts. Das Cover ist quadratisch und darf nicht
+   mitwachsen, sonst frisst es auf breiten Schirmen die halbe Zeile. */
+.podcast-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,3.4vw,44px);align-items:center}
+@media(min-width:760px){.podcast-grid{grid-template-columns:minmax(0,280px) 1fr}}
+.podcast-cover{margin:0;max-width:280px}
+.podcast-cover img{
+  width:100%;border-radius:var(--ecke-mittel);
+  box-shadow:0 18px 40px -20px rgba(0,0,0,.75);
+}
+.marke-bald{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(242,144,143,.16);border:1px solid rgba(242,144,143,.32);
+  border-radius:999px;padding:6px 16px;
+  font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--koralle);margin-bottom:20px;
+}
+
+/* =================== FORMULAR (fuer den Newsletter, aktuell aus) =================== */
+form{max-width:520px;margin-top:26px}
+.feldzeile{display:flex;gap:12px;flex-wrap:wrap}
+input[type=email]{
+  flex:1 1 250px;padding:15px 20px;font-size:.97rem;font-family:inherit;
+  border:1px solid var(--rand-stark);border-radius:var(--ecke-pille);background:var(--flaeche);color:var(--text);
+}
+input[type=email]:disabled{background:#f4efe8;color:#a49a8e}
+
+/* =================== FUSS =================== */
+/* Der Fuss ist seit dem 10.08. schlank: Impressum und Datenschutz
+   stehen auf rechtliches.html, hier bleiben nur Marke, die drei Links
+   und die Copyright-Zeile. */
+footer{background:var(--nacht);color:rgba(250,246,240,.62);padding:clamp(56px,7vw,80px) 0 44px}
+footer a{color:var(--koralle)}
+footer p{font-size:.87rem;line-height:1.7}
+.fuss-kopf{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:26px;flex-wrap:wrap;
+  padding-bottom:30px;border-bottom:1px solid rgba(250,246,240,.13);
+}
+.fuss-marke{font-family:var(--display);font-size:1.5rem;color:#fff;line-height:1.25}
+.fuss-zeilen{display:flex;gap:26px;flex-wrap:wrap;font-size:.87rem;font-weight:600}
+/* Leiser als der uebrige Fuss, aber nicht per opacity: das lag mit
+   .7 auf .62 uebereinander bei 3,8:1 und war damit unter der
+   Lesbarkeitsschwelle. Eine gesetzte Farbe ist nachrechenbar, 5,2:1. */
+.copy{margin-top:32px;padding-top:24px;font-size:.82rem;color:rgba(250,246,240,.55)}
+
+/* =================== BEWEGUNG =================== */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .85s var(--kurve),transform .85s var(--kurve)}
+[data-reveal].sichtbar{opacity:1;transform:none}
+[data-reveal][data-verzug="1"]{transition-delay:.09s}
+[data-reveal][data-verzug="2"]{transition-delay:.18s}
+[data-reveal][data-verzug="3"]{transition-delay:.27s}
+
+/* Wer Bewegung reduziert haben will, bekommt eine ruhige Seite.
+   Betrifft auch alle Reveals, sonst bliebe die Seite leer. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  [data-reveal]{opacity:1;transform:none}
+}
+
+/* Druckansicht: dunkle Baender kosten sonst eine halbe Tonerpatrone */
+@media print{
+  header,#fortschritt,.sprung{display:none}
+  /* Die Stimmungsbilder bleiben draussen, das Buch-Mockup darf bleiben */
+  .bild{display:none}
+  body{background:#fff;color:#000;font-size:11pt}
+  .hero,.dunkel,.zitat-band,footer{background:#fff !important;color:#000 !important}
+  .hero::before,.hero::after,.zitat-band::before{display:none}
+  .hero h1,.dunkel h2,.fuss-marke{color:#000 !important}
+  [data-reveal]{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="fortschritt" aria-hidden="true"></div>
+<a class="sprung" href="#inhalt">Zum Inhalt springen</a>
+
+<header id="kopfzeile">
+  <div class="kopf">
+    <a class="marke" href="#top">Die Kunst, <b>vorbereitet</b> zu sein</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#buch">Das Buch</a>
+      <a href="#inhalt-buch">Inhalt</a>
+      <a href="#fuerwen">Für wen</a>
+      <a href="#autorin">Die Autorin</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <!-- Drei Zeilen, drei Bloecke. Keine <br> mehr: das <em> ist
+           display:block, und ein <br> dahinter macht daraus eine
+           zusaetzliche Leerzeile. -->
+      <h1><span>Die Kunst,</span><em>vorbereitet</em><span>zu sein</span></h1>
+      <p class="unter">Praxisnahe Krisenvorsorge für Frauen</p>
+      <p class="anriss">Kein Bunker. Keine Panik. Nur Wissen, das Ihnen Ruhe gibt, bevor Sie sie brauchen.</p>
+
+      <div class="aktionen">
+        <!-- NACH DEM LAUNCH: aria-disabled entfernen und href auf den Amazon-Link setzen. -->
+        <a class="btn btn-haupt" href="#" aria-disabled="true">Buch bei Amazon</a>
+        <a class="btn btn-hell" href="#buch">Worum es geht</a>
+      </div>
+      <p class="status" style="margin-top:22px"><span class="punkt"></span>Erscheint am 15. September 2026</p>
+      <!-- Der Preis steht bewusst schon hier oben und nicht erst in der
+           Eckdaten-Zeile weit unten: wer wissen will, was es kostet,
+           soll dafuer nicht scrollen muessen. -->
+      <p class="hero-preis">Taschenbuch <b>18,99&nbsp;€</b> · E-Book <b>9,99&nbsp;€</b> · 348 Seiten</p>
+    </div>
+
+    <div class="cover-buehne" data-reveal data-verzug="1">
+      <!-- AUSTAUSCHEN gegen ein eigenes Mockup (Canva o.ae.):
+           Datei nach bilder/ legen, dann hier src, width, height und
+           den Alt-Text anpassen. width und height sind die echten
+           Pixelmasse der Datei - sie halten den Platz frei, damit
+           beim Laden nichts springt. -->
+      <figure class="buch-mockup" id="cover">
+        <img src="bilder/buch-mockup.webp" width="780" height="1170"
+             fetchpriority="high" decoding="async"
+             alt="Das Buch „Die Kunst, vorbereitet zu sein“, gehalten von einer Frau in einem rosé Strickpullover. Auf dem Cover steht eine Frau vor einem Regal mit Vorratsgläsern.">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DAS BUCH ===================== -->
+<section id="buch">
+  <div class="wrap">
+    <div class="text-bild">
+      <div data-reveal>
+        <p class="eyebrow">Worum es geht</p>
+        <h2>Vorsorge, die in ein normales Leben passt</h2>
+
+        <p class="gross">Ein Stromausfall am Abend. Ein Supermarkt mit leeren Regalen. Ein Gefühl, das plötzlich alles kippen lässt.</p>
+
+        <p>Solche Momente kennen Sie vielleicht aus den Nachrichten, vielleicht auch aus eigener Erfahrung. Dieses Buch zeigt Ihnen, wie Sie sich darauf vorbereiten, ohne dabei ängstlicher zu werden.</p>
+
+        <p>Es ist kein Ratgeber für den Bunker im Keller, sondern ein Wegweiser für den ganz normalen Alltag: für Vorräte, die wirklich zu Ihrem Leben passen, für den Umgang mit Stromausfällen und kleinen Notfällen, und für die eigene Psyche, wenn der Boden mal wackelt.</p>
+      </div>
+
+      <figure class="bild" data-reveal data-verzug="1">
+        <img src="bilder/vorrat.webp" width="820" height="1025" loading="lazy" decoding="async"
+             alt="Eine Hand stellt ein Einmachglas mit Bohnen zurück in ein Küchenregal, daneben weitere Gläser mit Reis, Linsen und Erbsen sowie zwei Konservendosen.">
+        <figcaption>Illustration, KI-generiert</figcaption>
+      </figure>
+    </div>
+
+    <div class="karten">
+      <article class="karte" data-reveal>
+        <div class="karte-icon" aria-hidden="true">
+          <!-- Vorratsglas -->
+          <svg viewBox="0 0 24 24"><path d="M8 3h8M8.5 3v2.2c0 .6-.3 1.1-.8 1.5A4 4 0 0 0 6 10v8a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-8a4 4 0 0 0-1.7-3.3c-.5-.4-.8-.9-.8-1.5V3"/><path d="M6 13.5c2-1 4-1 6 0s4 1 6 0"/></svg>
+        </div>
+        <h3>Vorräte, die zu Ihnen passen</h3>
+        <p>Kein Regal voller Konserven, die niemand isst. Sondern ein Vorrat, der zu Ihrem Budget, Ihrer Küche und Ihrem Alltag passt.</p>
+      </article>
+
+      <article class="karte" data-reveal data-verzug="1">
+        <div class="karte-icon" aria-hidden="true">
+          <!-- Sturmlaterne -->
+          <svg viewBox="0 0 24 24"><path d="M9 2h6M12 2v2"/><path d="M8 6h8l-1 3.5a6 6 0 0 1 0 5L16 18H8l1-3.5a6 6 0 0 1 0-5L8 6Z"/><path d="M7 18h10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1Z"/><path d="M12 10v4"/></svg>
+        </div>
+        <h3>Wenn der Strom weg ist</h3>
+        <p>Was bei Stromausfall, Wasserknappheit und kleinen Notfällen wirklich hilft. Praktisch, Schritt für Schritt, ohne Fachchinesisch.</p>
+      </article>
+
+      <article class="karte" data-reveal data-verzug="2">
+        <div class="karte-icon" aria-hidden="true">
+          <!-- Kopf mit Herz -->
+          <svg viewBox="0 0 24 24"><path d="M20 12.5a8 8 0 1 0-5 7.4V22"/><path d="M12.2 9.4c.9-1 2.4-1 3.3 0 .9 1 .9 2.6 0 3.6L12.2 16 8.9 13c-.9-1-.9-2.6 0-3.6.9-1 2.4-1 3.3 0Z"/></svg>
+        </div>
+        <h3>Der Kopf in der Krise</h3>
+        <p>Wie Sie ruhig bleiben, wenn es eng wird, und wie Sie jemandem beistehen, der gerade von der Angst überrollt wird.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INHALT ===================== -->
+<section id="inhalt-buch" class="band-papier">
+  <div class="wrap">
+    <div class="text-bild gedreht">
+      <div data-reveal>
+        <p class="eyebrow">Der Inhalt</p>
+        <h2>Acht Teile, vom Kopf bis zur Packliste</h2>
+        <p>Das Buch beginnt nicht bei der Ausrüstung, sondern bei Ihnen. Erst wenn klar ist, was eine Krise mit einem Menschen macht, ergeben Vorräte und Pläne überhaupt Sinn.</p>
+      </div>
+
+      <figure class="bild" data-reveal data-verzug="1">
+        <img src="bilder/innenseiten.webp" width="760" height="1014" loading="lazy" decoding="async"
+             alt="Das aufgeschlagene Buch auf einer hellen Decke, daneben ein Tablett mit Kaffee, einer Kerze und einer Sukkulente.">
+        <figcaption>Illustration, KI-generiert</figcaption>
+      </figure>
+    </div>
+
+    <!-- Die Icons sind wortgleich mit den Dateien in
+         Marketing Kit/App-Logo Icon/assets/icons/ und liegen inline,
+         damit die Seite dafuer keine acht Extra-Anfragen stellt. -->
+    <ol class="kacheln" data-reveal data-verzug="1">
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">I</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- dokumente -->
+          <svg viewBox="0 0 24 24"><rect x="4.5" y="3.5" width="15" height="17" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        </div>
+        <h3>Einführung</h3>
+        <p>Warum Krisenvorsorge für Frauen anders aussieht, was vergangene Krisen gelehrt haben und wie das Leben aussieht, für das hier geplant wird.</p>
+      </li>
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">II</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- kopf-mit-herz -->
+          <svg viewBox="0 0 24 24"><path d="M20 12.5a8 8 0 1 0-5 7.4V22"/><path d="M12.2 9.4c.9-1 2.4-1 3.3 0 .9 1 .9 2.6 0 3.6L12.2 16 8.9 13c-.9-1-.9-2.6 0-3.6.9-1 2.4-1 3.3 0Z"/></svg>
+        </div>
+        <h3>Mentale Vorbereitung</h3>
+        <p>Die acht Phasen der Krisenbewältigung, die fünf Säulen der Resilienz, Katastrophengedanken stoppen und psychische Erste Hilfe für andere.</p>
+      </li>
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">III</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- zeitraum -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7.5v5l3 2"/></svg>
+        </div>
+        <h3>Alltag in der Langzeitkrise</h3>
+        <p>Wenn es nicht nach drei Tagen vorbei ist: Stress über Wochen, Schlaf, digitaler Detox, Kinder, Partnerschaft und Entscheidungen unter Druck.</p>
+      </li>
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">IV</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- schild-check -->
+          <svg viewBox="0 0 24 24"><path d="M12 3.5l7 2.5v6c0 4-3 7.2-7 8.5-4-1.3-7-4.5-7-8.5V6z"/><path d="M9 12.2l2.2 2.2 4-4.4"/></svg>
+        </div>
+        <h3>Strategische Grundentscheidungen</h3>
+        <p>Bleiben oder gehen. Die eine Frage, an der alles Weitere hängt, mit Vor- und Nachteilen beider Wege.</p>
+      </li>
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">V</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- vorrat -->
+          <svg viewBox="0 0 24 24"><path d="M4 8.5l8-3.5 8 3.5v7L12 19l-8-3.5z"/><path d="M4 8.5l8 3.5 8-3.5M12 12v7"/></svg>
+        </div>
+        <h3>Zu Hause bleiben</h3>
+        <p>Der längste Teil des Buches: Stromausfall, Wasser, Lebensmittelvorrat, Kochen ohne Herd, Hygiene, Menstruation und Verhütung, Abfall, Schutzräume und finanzielle Vorsorge.</p>
+      </li>
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">VI</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- bug-out-bag -->
+          <svg viewBox="0 0 24 24"><path d="M5 8.5h14v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M9 8.5V6.5a3 3 0 0 1 6 0v2"/></svg>
+        </div>
+        <h3>Wenn Sie gehen müssen</h3>
+        <p>Notgepäck, das Sie auch wirklich tragen können. Fluchtwege ohne Auto, Orientierung ohne Handy, unauffällig unterwegs sein, allein oder in der Gruppe.</p>
+      </li>
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">VII</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- erste-hilfe -->
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="6.5" width="17" height="13" rx="1"/><path d="M9 6.5V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1.5"/><path d="M12 10v6M9 13h6"/></svg>
+        </div>
+        <h3>Gesundheit und Medizin</h3>
+        <p>Infektionsschutz und Prävention für den Fall, dass Praxen geschlossen und Krankenhäuser überlastet sind.</p>
+      </li>
+      <li class="kachel">
+        <span class="kachel-nr" aria-hidden="true">VIII</span>
+        <div class="kachel-icon" aria-hidden="true">
+          <!-- information -->
+          <svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="11" rx="1"/><circle cx="8.5" cy="14.5" r="2.5"/><path d="M14 12.5h4M14 16.5h4"/><path d="M17.5 9 21 4"/></svg>
+        </div>
+        <h3>Information</h3>
+        <p>Die eigene Lage nüchtern einschätzen, Nachrichten und Gerüchte einordnen, und entscheiden, wem Sie die Tür öffnen.</p>
+      </li>
+    </ol>
+
+    <div class="teaser-anhang" data-reveal>
+      <div>
+        <p class="eyebrow">Der Anhang</p>
+        <h3>Zum Abhaken und Mitnehmen</h3>
+        <p>Checklisten nach Themenbereichen, Vorratslisten nach Lebensmittelgruppen, Notfallkontakte, Informationsquellen und eine Übersicht der Kommunikationsmittel. Dazu Literatur- und Linkverzeichnis.</p>
+      </div>
+      <figure>
+        <img src="bilder/listen.webp" width="820" height="741" loading="lazy" decoding="async"
+             alt="Aufgefächerte Seiten aus dem Anhang des Buches: eine Vorratsliste nach Lebensmittelgruppen, eine Tabelle mit Notfallkontakten, eine Liste von Informationsquellen und eine Übersicht der Kommunikationsmittel.">
+      </figure>
+    </div>
+
+    <div class="geschichten" data-reveal>
+      <h3>Acht Frauen, acht Krisen</h3>
+      <p>Jeder Teil endet mit einer Kurzgeschichte. Eine Frau, eine Situation, eine Nacht. Danach schauen wir gemeinsam auf ihre Entscheidungen: was sie klug gemacht hat, und was besser hätte laufen können.</p>
+      <ul class="titelliste">
+        <li>Der Morgen, als alles anders war</li>
+        <li>Der Anker</li>
+        <li>Die Wahl</li>
+        <li>Blackout</li>
+        <li>Der Alarm</li>
+        <li>Nur das Nötigste</li>
+        <li>Luft</li>
+        <li>Das Klopfen an der Tür</li>
+      </ul>
+    </div>
+
+    <p class="klein leise eckdaten" data-reveal><b>348 Seiten</b> · Taschenbuch, deutsch, <b>18,99&nbsp;€</b> · E-Book für Kindle, <b>9,99&nbsp;€</b>, auch in Kindle Unlimited · erscheint am <b>15. September 2026</b> bei Amazon</p>
+  </div>
+</section>
+
+<!-- ===================== ZITAT ===================== -->
+<div class="zitat-band">
+  <div class="wrap" data-reveal>
+    <blockquote>
+      <p>Krisenvorsorge ist kein Zeichen von Angst, sondern von Selbstfürsorge.</p>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ===================== FUER WEN ===================== -->
+<section id="fuerwen" class="band-papier">
+  <div class="wrap">
+    <div class="text-bild">
+      <div data-reveal>
+        <p class="eyebrow">Für wen</p>
+        <h2>Für Leben, die in keinen Standardratgeber passen</h2>
+        <p>Die meisten Krisenratgeber sind für jemanden geschrieben, der ein Auto hat, einen Keller, ein Grundstück und niemanden, für den er nebenbei mitdenken muss. Dieses Buch ist für alle anderen.</p>
+      </div>
+
+      <figure class="bild" data-reveal data-verzug="1">
+        <img src="bilder/tasche.webp" width="820" height="1025" loading="lazy" decoding="async"
+             alt="Ein gepackter Rucksack auf einem Dielenboden: eine Hand legt Socken hinein, daneben liegen eine Decke, eine Taschenlampe, eine Erste-Hilfe-Tasche und eine Trinkflasche.">
+        <figcaption>Illustration, KI-generiert</figcaption>
+      </figure>
+    </div>
+
+    <!-- Wortlaut unveraendert, nur das Stichwort jeweils fett: in einer
+         Karte braucht das Auge einen Einstieg, in einer Liste reichte
+         der Aufzaehlungspunkt. -->
+    <ul class="fuerwen" data-reveal data-verzug="1">
+      <li>Für <b>Mütter</b>, die für mehr als sich selbst planen</li>
+      <li>Für <b>Alleinstehende</b> ohne Netz im Rücken</li>
+      <li>Für <b>kleine Wohnungen</b> ohne Keller und Garage</li>
+      <li>Für <b>ein knappes Budget</b>, das keine Ausrüstungsorgie hergibt</li>
+      <li>Für <b>Menschen ohne Auto</b>, denen jeder Fluchtplan das Gegenteil unterstellt</li>
+      <li>Für <b>Tage</b>, an denen die Kraft für große Projekte fehlt</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== AUTORIN ===================== -->
+<section id="autorin">
+  <div class="wrap">
+    <div class="autorin">
+      <div data-reveal>
+        <img class="portraet" src="bilder/autorin.webp" width="480" height="480"
+             loading="lazy" decoding="async"
+             alt="Porträt von Elisabeth Marenfeld, Schwarzweißaufnahme vor einem Bücherregal.">
+      </div>
+      <div data-reveal data-verzug="1">
+        <p class="eyebrow">Über die Autorin</p>
+        <h2>Elisabeth Marenfeld</h2>
+
+        <p>Elisabeth Marenfeld ist keine Survival-Expertin und war nie bei der Bundeswehr. Was sie hat, ist die Perspektive einer ganz normalen Frau, die 2020 zwischen leeren Regalen stand und beschloss, sich beim nächsten Mal nicht mehr so hilflos zu fühlen.</p>
+
+        <p>Seitdem hat sie gelesen, ausprobiert, verworfen und wieder von vorn angefangen: Vorräte, die im Alltag tatsächlich funktionieren, Notfallpläne, die auch ohne Auto aufgehen, und die Frage, was eigentlich mit dem Kopf passiert, wenn der Boden wackelt. Sie schreibt für Frauen, deren Leben nicht in die üblichen Krisenratgeber passt: mit wenig Platz, wenig Geld oder wenig Kraft, oft mit Verantwortung für andere.</p>
+
+        <p>Alles, was sie seitdem gelernt hat, steht in diesem Buch. Und im Podcast, weil manches sich besser erzählen als lesen lässt.</p>
+
+        <p class="signatur">Bleiben Sie ruhig, bleiben Sie vorbereitet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PODCAST (Platzhalter) ===================== -->
+<section id="podcast" class="dunkel">
+  <div class="wrap">
+    <div class="bald" data-reveal>
+      <div class="podcast-grid">
+        <!-- Das echte Podcast-Cover, damit die Kachel in Spotify und
+             Apple wiedererkannt wird. Quadratisch, wie die Plattformen
+             es ausliefern. -->
+        <figure class="podcast-cover">
+          <img src="bilder/podcast-cover.webp" width="640" height="640" loading="lazy" decoding="async"
+               alt="Cover des Podcasts „Ruhe im System – Krisenvorsorge für Frauen“, Der Podcast zum Buch „Die Kunst, vorbereitet zu sein“.">
+        </figure>
+        <div>
+          <span class="marke-bald">Bald</span>
+          <h2 style="margin-top:0">Ruhe im System</h2>
+          <p>Der Podcast zum Buch. Zwei Sorten Folgen: die einen erklären ein Thema ganz praktisch, mit einem kleinen Schritt, den Sie sofort gehen können. Die anderen erzählen eine Geschichte über eine Frau in einer Krisensituation, und danach schauen wir gemeinsam, was sie klug gemacht hat und was besser hätte laufen können.</p>
+          <!-- NACH DER VEROEFFENTLICHUNG: Buttons zu Spotify und Apple Podcasts hier einsetzen,
+               z.B. <a class="btn btn-hell" href="...">Bei Spotify hören</a> -->
+          <p class="klein" style="margin-bottom:0;opacity:.72">Überall, wo es Podcasts gibt. Sobald die ersten Folgen online sind, finden Sie sie auch hier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NEWSLETTER (bewusst deaktiviert) =====================
+     Entscheidung 2026-07-29: Abschnitt gestalterisch vorbereitet, aber
+     abgeschaltet. Zum Scharfschalten sind drei Dinge noetig:
+       1. einen Anbieter mit Double-Opt-in waehlen (z.B. Brevo, CleverReach,
+          Rapidmail; Server in der EU spart die Diskussion um Drittlandtransfer)
+       2. das action-Attribut des Formulars auf den Anbieter zeigen lassen
+          und disabled bei Feld und Button entfernen
+       3. die Datenschutzerklaerung um den Newsletter-Absatz ergaenzen
+     Bis dahin bleibt der Block auskommentiert, damit niemand Adressen
+     eintippt, die nirgendwo ankommen.
+
+<section id="newsletter" class="band-papier">
+  <div class="wrap-schmal">
+    <p class="eyebrow">Newsletter</p>
+    <h2>Bescheid bekommen, wenn es losgeht</h2>
+    <p>Eine Mail, wenn das Buch erscheint. Sonst nichts.</p>
+    <form action="" method="post">
+      <div class="feldzeile">
+        <label for="mail" style="position:absolute;left:-9999px">E-Mail-Adresse</label>
+        <input id="mail" type="email" name="email" placeholder="ihre@mailadresse.de" required disabled>
+        <button class="btn btn-rand" type="submit" disabled>Eintragen</button>
+      </div>
+      <p class="klein leise" style="margin-top:16px">Sie bekommen eine Bestaetigungsmail. Abmelden jederzeit ueber den Link in jeder Mail.</p>
+    </form>
+  </div>
+</section>
+====================== ENDE NEWSLETTER ====================== -->
+
+<!-- ===================== KONTAKT ===================== -->
+<section id="kontakt" class="band-papier">
+  <div class="wrap-schmal" data-reveal>
+    <p class="eyebrow">Kontakt</p>
+    <h2>Schreiben Sie mir</h2>
+    <p>Fragen, Rückmeldungen oder Presseanfragen gern per Mail an
+      <a href="mailto:kontakt@krisenvorsorgefrauen.de">kontakt@krisenvorsorgefrauen.de</a>.
+    </p>
+    <p class="klein leise">Hinweis: Dieses Buch ersetzt keine ärztliche, rechtliche oder behördliche Beratung. Im Notfall gilt immer die 112.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FUSS ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="fuss-kopf">
+      <p class="fuss-marke">Die Kunst,<br>vorbereitet zu sein</p>
+      <!-- Impressum und Datenschutz stehen seit dem 10.08. auf einer
+           eigenen Seite. Sie ist ueber diese Links jederzeit mit einem
+           Klick erreichbar - genau das verlangt die Impressumspflicht -
+           und traegt dort noindex, damit die Anschrift nicht in
+           Suchergebnissen landet. -->
+      <nav class="fuss-zeilen" aria-label="Rechtliches">
+        <a href="rechtliches.html#impressum">Impressum</a>
+        <a href="rechtliches.html#datenschutz">Datenschutz</a>
+        <a href="#top">Nach oben</a>
+      </nav>
+    </div>
+
+    <p class="copy">© 2026 Elisabeth Marenfeld · Die Kunst, vorbereitet zu sein</p>
+  </div>
+</footer>
+
+<script>
+/* -------------------------------------------------------------
+   Gut 30 Zeilen eigenes JavaScript, nichts von fremden Servern.
+   Die Seite funktioniert auch vollstaendig ohne, dann eben ohne
+   Bewegung. Wer im Betriebssystem "Bewegung reduzieren" gesetzt
+   hat, bekommt hier gar nichts davon.
+   ------------------------------------------------------------- */
+(function(){
+  "use strict";
+  var ruhig = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* 1. Abschnitte tauchen beim Reinscrollen auf. */
+  var elemente = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
+  if (ruhig || !("IntersectionObserver" in window)) {
+    elemente.forEach(function(el){ el.classList.add("sichtbar"); });
+  } else {
+    var beobachter = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add("sichtbar");
+          beobachter.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    elemente.forEach(function(el){ beobachter.observe(el); });
+  }
+
+  /* 2. Kopfzeile bekommt beim Scrollen Schatten, Fortschrittsbalken laeuft mit */
+  var kopf = document.getElementById("kopfzeile");
+  var balken = document.getElementById("fortschritt");
+  var wartet = false;
+  function beimScrollen(){
+    var y = window.scrollY || 0;
+    kopf.classList.toggle("gescrollt", y > 12);
+    var hoehe = document.documentElement.scrollHeight - window.innerHeight;
+    balken.style.width = (hoehe > 0 ? Math.min(y / hoehe, 1) * 100 : 0) + "%";
+    wartet = false;
+  }
+  window.addEventListener("scroll", function(){
+    if (!wartet) { wartet = true; window.requestAnimationFrame(beimScrollen); }
+  }, { passive: true });
+  beimScrollen();
+
+  /* 3. Das Buch neigt sich leicht zum Mauszeiger.
+        Nur auf Geraeten mit echtem Zeiger, auf dem Handy waere das Unsinn. */
+  var cover = document.getElementById("cover");
+  if (cover && !ruhig && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    var buehne = cover.parentElement;
+    buehne.addEventListener("pointermove", function(ev){
+      var r = buehne.getBoundingClientRect();
+      var x = (ev.clientX - r.left) / r.width - 0.5;
+      var y = (ev.clientY - r.top) / r.height - 0.5;
+      cover.style.setProperty("--neigey", (x * 13).toFixed(2) + "deg");
+      cover.style.setProperty("--neigex", (-y * 9).toFixed(2) + "deg");
+    });
+    buehne.addEventListener("pointerleave", function(){
+      cover.style.setProperty("--neigey", "0deg");
+      cover.style.setProperty("--neigex", "0deg");
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

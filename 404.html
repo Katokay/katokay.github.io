@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seite nicht gefunden – Die Kunst, vorbereitet zu sein</title>
+<meta name="theme-color" content="#2a2724">
+<meta name="robots" content="noindex">
+<style>
+/* Schriften wie auf der Startseite, vom eigenen Server. Siehe Kommentar in index.html. */
+@font-face{
+  font-family:"Playfair Display";font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/playfair-display-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Montserrat";font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/montserrat-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Montserrat";font-style:normal;font-weight:600;font-display:swap;
+  src:url("fonts/montserrat-600.woff2") format("woff2");
+}
+:root{
+  /* Werte wie in index.html und in tokens.css im Designsystem */
+  --nacht:#2A2724;--creme:#FAF6F0;--koralle:#F2908F;
+  --akzent:#B85956;--akzent-gedrueckt:#8F4340;--auf-akzent:#FFFFFF;
+  --ecke-pille:999px;
+  --display:"Playfair Display","Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;position:relative;isolation:isolate;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--nacht);color:rgba(250,246,240,.8);
+  font-family:var(--sans);font-size:17px;line-height:1.75;text-align:center;padding:32px;
+  -webkit-font-smoothing:antialiased;
+}
+/* Gleiche Lichtstimmung wie im Hero der Startseite, gleiches winziges
+   Bild: bei 80px Weichzeichnung genuegen 60px Breite. */
+body::before{
+  content:"";position:absolute;inset:-12%;z-index:-2;
+  background:url("bilder/hero-licht.webp") center 28% / cover no-repeat;
+  filter:blur(80px) saturate(115%);opacity:.45;transform:scale(1.15);
+}
+body::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(120% 90% at 70% 25%, rgba(242,144,143,.16), transparent 62%),
+    linear-gradient(180deg, rgba(42,39,36,.76), rgba(42,39,36,.92));
+}
+.eyebrow{
+  font-size:.74rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--koralle);margin:0 0 1.4em;
+}
+h1{
+  font-family:var(--display);font-weight:400;line-height:1.14;
+  font-size:clamp(2.1rem,6vw,3.4rem);margin:0 0 .45em;color:#fff;
+}
+p{max-width:46ch;margin:0 auto 2em}
+a{
+  display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:var(--ecke-pille);
+  background:var(--akzent);color:var(--auf-akzent);text-decoration:none;
+  font-size:.94rem;font-weight:600;letter-spacing:.02em;
+  box-shadow:0 10px 26px -12px rgba(184,89,86,.9);
+  transition:transform .28s cubic-bezier(.16,.68,.32,1),background .28s;
+}
+a:hover{background:var(--akzent-gedrueckt);transform:translateY(-2px)}
+a:focus-visible{outline:3px solid var(--koralle);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Fehler 404</p>
+  <h1>Hier ist nichts</h1>
+  <p>Diese Seite gibt es nicht, oder sie ist umgezogen. Gut vorbereitet zu sein heißt auch, den Rückweg zu kennen.</p>
+  <a href="/">Zurück zur Startseite</a>
+</main>
+</body>
+</html>
