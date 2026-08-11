@@ -328,6 +328,18 @@ header.gescrollt .kopf{padding-top:11px;padding-bottom:11px}
   max-width:32ch;margin:0 auto;text-align:center;text-wrap:balance;
 }
 
+/* Das Listenband liegt in Salbei, dem Ruhe-Ton. Es klemmt zwischen
+   zwei hellen Baendern und braucht deshalb eigene Rollen. Koralle
+   faellt hier aus: auf Salbei kommt sie nur auf 2,4:1. Creme dagegen
+   auf 5,1:1, und zwar als gesetzte Farbe, nicht ueber opacity - der
+   Fehler steckte schon einmal im Fuss. */
+.band-ruhe{background:var(--ruhe);color:var(--creme);--akzent-text:var(--creme)}
+.band-ruhe h2{color:#fff}
+/* Der Knopf wird zur hellen Flaeche. Koralle auf Salbei waere zwar
+   lesbar, aber truebe: die beiden Toene liegen zu dicht beieinander. */
+.band-ruhe .btn-haupt{background:var(--creme);color:var(--nacht);box-shadow:0 12px 30px -16px rgba(0,0,0,.7)}
+.band-ruhe .btn-haupt:hover{background:#fff;color:var(--nacht)}
+
 /* =================== KARTEN =================== */
 .karten{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.4vw,26px);margin-top:clamp(38px,5vw,56px)}
 @media(min-width:760px){.karten{grid-template-columns:repeat(3,1fr)}}
@@ -514,15 +526,6 @@ header.gescrollt .kopf{padding-top:11px;padding-bottom:11px}
   color:var(--koralle);margin-bottom:20px;
 }
 
-/* =================== FORMULAR (fuer den Newsletter, aktuell aus) =================== */
-form{max-width:520px;margin-top:26px}
-.feldzeile{display:flex;gap:12px;flex-wrap:wrap}
-input[type=email]{
-  flex:1 1 250px;padding:15px 20px;font-size:.97rem;font-family:inherit;
-  border:1px solid var(--rand-stark);border-radius:var(--ecke-pille);background:var(--flaeche);color:var(--text);
-}
-input[type=email]:disabled{background:#f4efe8;color:#a49a8e}
-
 /* =================== FUSS =================== */
 /* Der Fuss ist seit dem 10.08. schlank: Impressum und Datenschutz
    stehen auf rechtliches.html, hier bleiben nur Marke, die drei Links
@@ -565,9 +568,9 @@ footer p{font-size:.87rem;line-height:1.7}
   /* Die Stimmungsbilder bleiben draussen, das Buch-Mockup darf bleiben */
   .bild{display:none}
   body{background:#fff;color:#000;font-size:11pt}
-  .hero,.dunkel,.zitat-band,footer{background:#fff !important;color:#000 !important}
+  .hero,.dunkel,.zitat-band,.band-ruhe,footer{background:#fff !important;color:#000 !important}
   .hero::before,.hero::after,.zitat-band::before{display:none}
-  .hero h1,.dunkel h2,.fuss-marke{color:#000 !important}
+  .hero h1,.dunkel h2,.band-ruhe h2,.fuss-marke{color:#000 !important}
   [data-reveal]{opacity:1;transform:none}
 }
 </style>
@@ -584,6 +587,7 @@ footer p{font-size:.87rem;line-height:1.7}
       <a href="#buch">Das Buch</a>
       <a href="#inhalt-buch">Inhalt</a>
       <a href="#fuerwen">Für wen</a>
+      <a href="#liste">Die Liste</a>
       <a href="#autorin">Die Autorin</a>
       <a href="#podcast">Podcast</a>
       <a href="#kontakt">Kontakt</a>
@@ -850,6 +854,26 @@ footer p{font-size:.87rem;line-height:1.7}
   </div>
 </section>
 
+<!-- ===================== DIE LISTE (Anreisser) =====================
+     Steht zwischen "Fuer wen" und der Autorin (Teresa, 11.08.): wer bis
+     hierhin gelesen hat, weiss, worum es geht, und nimmt das Geschenk
+     eher mit als jemand, der gerade erst angekommen ist. Er siezt wie
+     der Rest der Startseite - die Zielseite /liste duzt, weil sie aus
+     Podcast und Instagram angesteuert wird.
+     Verlinkt wird auf die Seite, nicht auf die PDF-Datei: die Adresse
+     steckt ab Folge 00 im Sprechtext und muss erweiterbar bleiben. -->
+<section id="liste" class="band-ruhe">
+  <div class="wrap-schmal" data-reveal>
+    <p class="eyebrow">Kostenlos</p>
+    <h2>Die ersten 72 Stunden</h2>
+    <p class="gross">Eine Checkliste zum Ausdrucken und Abhaken: was Sie zu Hause haben sollten, damit drei Tage ohne Strom, Wasser oder Einkaufen kein Drama werden. Neun Blöcke, dazu ein Teil zum Ausfüllen.</p>
+    <p>Ohne Anmeldung, ohne Mailadresse, ausdrücklich zum Weitergeben.</p>
+    <div class="aktionen">
+      <a class="btn btn-haupt" href="liste/">Zur Checkliste</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== AUTORIN ===================== -->
 <section id="autorin">
   <div class="wrap">
@@ -899,35 +923,6 @@ footer p{font-size:.87rem;line-height:1.7}
     </div>
   </div>
 </section>
-
-<!-- ===================== NEWSLETTER (bewusst deaktiviert) =====================
-     Entscheidung 2026-07-29: Abschnitt gestalterisch vorbereitet, aber
-     abgeschaltet. Zum Scharfschalten sind drei Dinge noetig:
-       1. einen Anbieter mit Double-Opt-in waehlen (z.B. Brevo, CleverReach,
-          Rapidmail; Server in der EU spart die Diskussion um Drittlandtransfer)
-       2. das action-Attribut des Formulars auf den Anbieter zeigen lassen
-          und disabled bei Feld und Button entfernen
-       3. die Datenschutzerklaerung um den Newsletter-Absatz ergaenzen
-     Bis dahin bleibt der Block auskommentiert, damit niemand Adressen
-     eintippt, die nirgendwo ankommen.
-
-<section id="newsletter" class="band-papier">
-  <div class="wrap-schmal">
-    <p class="eyebrow">Newsletter</p>
-    <h2>Bescheid bekommen, wenn es losgeht</h2>
-    <p>Eine Mail, wenn das Buch erscheint. Sonst nichts.</p>
-    <form action="" method="post">
-      <div class="feldzeile">
-        <label for="mail" style="position:absolute;left:-9999px">E-Mail-Adresse</label>
-        <input id="mail" type="email" name="email" placeholder="ihre@mailadresse.de" required disabled>
-        <button class="btn btn-rand" type="submit" disabled>Eintragen</button>
-      </div>
-      <p class="klein leise" style="margin-top:16px">Sie bekommen eine Bestaetigungsmail. Abmelden jederzeit ueber den Link in jeder Mail.</p>
-    </form>
-  </div>
-</section>
-====================== ENDE NEWSLETTER ====================== -->
-
 <!-- ===================== KONTAKT ===================== -->
 <section id="kontakt" class="band-papier">
   <div class="wrap-schmal" data-reveal>

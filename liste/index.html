@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die ersten 72 Stunden – kostenlose Checkliste zum Ausdrucken</title>
+<meta name="description" content="Kostenlose Checkliste: Was du zu Hause haben solltest, damit drei Tage ohne Strom, Wasser oder Einkaufen kein Drama werden. Ohne Anmeldung, ohne Mailadresse.">
+<meta name="theme-color" content="#2a2724">
+<!-- Diese Seite soll ausdruecklich gefunden werden, deshalb kein
+     noindex (anders als rechtliches.html). Die Adresse steckt ab
+     Folge 00 im Sprechtext des Podcasts und ist danach unveraenderlich:
+     /liste bleibt, was auch immer spaeter dazukommt. -->
+<link rel="canonical" href="https://krisenvorsorgefrauen.de/liste/">
+
+<!-- Social-Vorschau -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://krisenvorsorgefrauen.de/liste/">
+<meta property="og:title" content="Die ersten 72 Stunden – kostenlose Checkliste">
+<meta property="og:description" content="Was du zu Hause haben solltest, damit drei Tage ohne Strom, Wasser oder Einkaufen kein Drama werden. Ohne Anmeldung.">
+<meta property="og:image" content="https://krisenvorsorgefrauen.de/cover-front-web.jpg">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+/* Schriften wie auf der Startseite, vom eigenen Server. Begruendung
+   steht im Kommentar in index.html. Ein Ordner tiefer, deshalb ../ */
+@font-face{
+  font-family:"Playfair Display";font-style:normal;font-weight:400;font-display:swap;
+  src:url("../fonts/playfair-display-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Montserrat";font-style:normal;font-weight:400;font-display:swap;
+  src:url("../fonts/montserrat-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Montserrat";font-style:normal;font-weight:600;font-display:swap;
+  src:url("../fonts/montserrat-600.woff2") format("woff2");
+}
+
+/* Dieselben Rollen wie in index.html, nur die, die hier vorkommen.
+   Werte wortgleich mit tokens.css im Designsystem. */
+:root{
+  --nacht:#2A2724;
+  --tinte:#2F2B27;         --tinte-leise:#6F665C;
+  --weiss:#FFFFFF;
+  --creme:#FAF6F0;         --papier:#F2EBE1;
+  --linie:#E3D9CB;         --sand:#E0CFB8;         --sand-tief:#CDB79A;
+  --koralle:#F2908F;       --koralle-tief:#B85956;
+  --koralle-text:#A34F4C;  --koralle-nacht:#8F4340;
+  --salbei-tief:#5F6E52;
+
+  --grund:var(--creme);    --grund-alt:var(--papier);
+  --flaeche:var(--weiss);
+  --text:var(--tinte);     --text-leise:var(--tinte-leise);
+  --rand:var(--linie);     --rand-stark:var(--sand-tief);
+  --akzent:var(--koralle-tief);      --auf-akzent:var(--weiss);
+  --akzent-gedrueckt:var(--koralle-nacht);
+  --akzent-text:var(--koralle-text);
+  --ruhe:var(--salbei-tief);
+
+  --schmal:760px;
+  --ecke-bild:2px; --ecke-mittel:14px;
+  --display:"Playfair Display","Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --kurve:cubic-bezier(.16,.68,.32,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--grund);color:var(--text);
+  font-family:var(--sans);font-size:17px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--akzent-text)}
+:focus-visible{outline:3px solid var(--koralle);outline-offset:3px;border-radius:var(--ecke-bild)}
+.wrap{max-width:var(--schmal);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+.sprung{
+  position:absolute;left:-9999px;top:0;z-index:70;
+  background:var(--nacht);color:#fff;padding:14px 22px;border-radius:0 0 8px 0;text-decoration:none;
+}
+.sprung:focus{left:0}
+
+/* =================== KOPFZEILE =================== */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,246,240,.9);border-bottom:1px solid var(--rand);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+}
+.kopf{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  max-width:var(--schmal);margin:0 auto;padding:16px clamp(20px,5vw,40px);
+}
+.marke{
+  font-family:var(--display);font-size:1.08rem;line-height:1.25;
+  color:var(--text);text-decoration:none;
+}
+.marke b{font-weight:400;color:var(--akzent-text);font-style:italic}
+.zurueck{
+  font-size:.83rem;font-weight:600;letter-spacing:.05em;
+  color:var(--text);text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+}
+.zurueck svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.zurueck:hover{color:var(--akzent-text)}
+
+/* =================== INHALT =================== */
+main{padding:clamp(48px,8vw,84px) 0 clamp(64px,9vw,96px)}
+h1{
+  font-family:var(--display);font-weight:400;line-height:1.14;letter-spacing:-.01em;
+  font-size:clamp(2.2rem,6vw,3.4rem);margin:0 0 .4em;
+}
+h2{
+  font-family:var(--display);font-weight:400;line-height:1.2;
+  font-size:clamp(1.5rem,3.2vw,2rem);margin:0 0 .6em;
+}
+h3{font-size:1rem;font-weight:600;margin:0 0 .4em}
+p{margin:0 0 1.1em;max-width:64ch}
+p:last-child{margin-bottom:0}
+.gross{font-size:clamp(1.1rem,1.9vw,1.28rem);line-height:1.65}
+.klein{font-size:.88rem;line-height:1.65}
+.leise{color:var(--text-leise)}
+.eyebrow{
+  font-size:.74rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--akzent-text);margin:0 0 1.4em;display:flex;align-items:center;gap:12px;
+}
+.eyebrow::after{content:"";flex:1;max-width:64px;height:1px;background:currentColor;opacity:.35}
+
+/* =================== DOWNLOAD-KNOPF =================== */
+/* Der Knopf ist der einzige Grund, warum es diese Seite gibt. Er steht
+   deshalb direkt unter den drei Saetzen und nicht am Seitenende. */
+.aktionen{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:34px 0 14px}
+.btn{
+  display:inline-flex;align-items:center;gap:11px;
+  padding:17px 34px;border-radius:999px;
+  font-family:var(--sans);font-size:.96rem;font-weight:600;letter-spacing:.02em;
+  text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  transition:transform .28s var(--kurve),box-shadow .28s var(--kurve),background .28s var(--kurve),color .28s var(--kurve);
+}
+.btn-haupt{background:var(--akzent);color:var(--auf-akzent);box-shadow:0 10px 26px -12px rgba(184,89,86,.9)}
+.btn-haupt:hover{background:var(--akzent-gedrueckt);transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(184,89,86,.95)}
+.btn-rand{border-color:var(--text);color:var(--text)}
+.btn-rand:hover{background:var(--text);color:var(--creme);transform:translateY(-2px)}
+.btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* =================== BLOECKE =================== */
+.block{
+  margin-top:clamp(44px,6vw,72px);padding-top:clamp(36px,5vw,56px);
+  border-top:1px solid var(--rand);
+}
+.kasten{
+  background:var(--grund-alt);border:1px solid var(--rand);border-radius:var(--ecke-mittel);
+  padding:clamp(22px,3vw,32px);margin:0;
+}
+
+/* Die neun Bloecke der Liste als Raster, damit man auf einen Blick
+   sieht, was drin steht, ohne das PDF vorher zu oeffnen. */
+.themen{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:2px 26px;
+}
+@media(min-width:560px){.themen{grid-template-columns:1fr 1fr}}
+.themen li{
+  display:flex;gap:12px;align-items:baseline;
+  padding:9px 0;border-bottom:1px solid var(--rand);font-size:.95rem;
+}
+.themen .nr{
+  font-family:var(--display);font-size:.9rem;color:var(--akzent-text);
+  min-width:1.6em;flex:none;
+}
+
+/* =================== FUSS =================== */
+footer{
+  background:var(--nacht);color:rgba(250,246,240,.62);
+  padding:clamp(40px,6vw,56px) 0 36px;font-size:.87rem;
+}
+footer a{color:var(--koralle)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+.fuss-marke{font-family:var(--display);font-size:1.2rem;color:#fff;margin:0}
+.fuss-zeilen{display:flex;gap:22px;flex-wrap:wrap;font-weight:600}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.001ms !important}
+}
+@media print{
+  header,.sprung,.aktionen{display:none}
+  body{background:#fff;color:#000;font-size:11pt}
+  footer{background:#fff !important;color:#000 !important}
+  .fuss-marke,footer a{color:#000 !important}
+  .kasten{background:#fff;border-color:#999}
+}
+</style>
+</head>
+<body>
+
+<a class="sprung" href="#inhalt">Zum Inhalt springen</a>
+
+<header>
+  <div class="kopf">
+    <a class="marke" href="../">Die Kunst, <b>vorbereitet</b> zu sein</a>
+    <a class="zurueck" href="../">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      Zurück zur Startseite
+    </a>
+  </div>
+</header>
+
+<!-- Diese Seite duzt, der Rest der Website siezt. Das ist Absicht und
+     seit dem 2026-08-11 im Marketing-Hub festgehalten: /liste wird
+     ausschliesslich aus Podcast und Instagram angesteuert, und beide
+     duzen. Das PDF selbst duzt ebenfalls. -->
+<main id="inhalt">
+  <div class="wrap">
+    <p class="eyebrow">Kostenlos</p>
+    <h1>Die ersten 72 Stunden</h1>
+
+    <p class="gross">Eine Checkliste zum Ausdrucken und Abhaken: was du zu Hause haben solltest, damit drei Tage ohne Strom, Wasser oder Einkaufen kein Drama werden. Neun Blöcke, dazu ein Teil zum Ausfüllen, den keine fertige Liste für dich übernehmen kann. Kein Mailfeld, keine Anmeldung, kein Haken irgendwo.</p>
+
+    <div class="aktionen">
+      <!-- download-Attribut: die Datei heisst auf der Platte so, wie sie
+           auf dem Blatt heisst, nicht "die-ersten-72-stunden.pdf". -->
+      <a class="btn btn-haupt"
+         href="die-ersten-72-stunden.pdf"
+         download="Die ersten 72 Stunden.pdf">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 20h16"/></svg>
+        Checkliste herunterladen
+      </a>
+    </div>
+    <p class="klein leise">PDF · 4 Seiten · 1,0&nbsp;MB · <a href="die-ersten-72-stunden.pdf" target="_blank" rel="noopener">erst im Browser ansehen</a></p>
+
+    <!-- ===================== WAS DRIN STEHT ===================== -->
+    <section class="block">
+      <h2>Was auf dem Blatt steht</h2>
+      <p>Teil 1 ist die Abhakliste, nach dem sortiert, was zuerst knapp wird:</p>
+
+      <ul class="themen">
+        <li><span class="nr">01</span><span>Wasser</span></li>
+        <li><span class="nr">02</span><span>Essen, das ohne Herd geht</span></li>
+        <li><span class="nr">03</span><span>Licht</span></li>
+        <li><span class="nr">04</span><span>Strom</span></li>
+        <li><span class="nr">05</span><span>Temperatur, kalt wie heiß</span></li>
+        <li><span class="nr">06</span><span>Hygiene</span></li>
+        <li><span class="nr">07</span><span>Erste Hilfe und Medikamente</span></li>
+        <li><span class="nr">08</span><span>Nachrichten und Erreichbarkeit</span></li>
+        <li><span class="nr">09</span><span>Kopf und Nerven</span></li>
+      </ul>
+
+      <p style="margin-top:1.6em">Teil 2 ist der Teil, den nur du ausfüllen kannst: Notfallkontakte, Treffpunkte, wo deine Dokumente liegen, wo dein Bargeld liegt. Fünf Minuten mit einem Stift, und der wichtigste Teil ist erledigt.</p>
+    </section>
+
+    <!-- ===================== WEITERGEBEN ===================== -->
+    <section class="block">
+      <h2>Gib sie weiter</h2>
+      <div class="kasten">
+        <p>Die Liste ist ein Geschenk, kein Tauschgeschäft. Druck sie aus, häng sie in die Abstellkammer, schick den Link weiter, leg sie deiner Mutter, deiner Nachbarin oder deiner besten Freundin auf den Tisch. Du musst dafür nichts kaufen und dich nirgends eintragen.</p>
+        <p class="klein leise" style="margin-top:1.1em">Link zum Weitergeben: <a href="https://krisenvorsorgefrauen.de/liste">krisenvorsorgefrauen.de/liste</a></p>
+      </div>
+    </section>
+
+    <!-- ===================== WEITER GEHT ES HIER ===================== -->
+    <section class="block">
+      <h2>Wenn du weiterlesen willst</h2>
+      <p><b>Podcast „Ruhe im System“</b> — kurze Folgen zu jeweils einem Thema von dieser Liste. Überall zu finden, wo es Podcasts gibt.</p>
+      <p><b>Buch „Die Kunst, vorbereitet zu sein“</b> — die ausführlichen Listen stehen im Anhang, dazu acht Kurzgeschichten und der Teil, um den es eigentlich geht: was eine Krise mit dem Kopf macht. Erscheint am 15. September 2026.</p>
+      <div class="aktionen">
+        <a class="btn btn-rand" href="../">Mehr über das Buch</a>
+      </div>
+      <p class="klein leise" style="margin-top:2.2em">Orientiert an den Empfehlungen des BBK. Ersetzt keine ärztliche, rechtliche oder behördliche Beratung. Im Notfall gilt immer die 112.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="fuss-marke">Die Kunst, vorbereitet zu sein</p>
+    <nav class="fuss-zeilen" aria-label="Rechtliches">
+      <a href="../">Startseite</a>
+      <a href="../rechtliches.html#impressum">Impressum</a>
+      <a href="../rechtliches.html#datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
