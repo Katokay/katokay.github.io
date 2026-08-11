@@ -1,0 +1,80 @@
+# Die Kunst, vorbereitet zu sein
+
+> Praxisnahe Krisenvorsorge für Frauen. Ein Buch von Elisabeth Marenfeld,
+> erscheint am 15. September 2026. Dazu ein Podcast und eine kostenlose
+> Checkliste für die ersten 72 Stunden.
+
+Diese Datei folgt dem Vorschlag von llmstxt.org und richtet sich an
+KI-Assistenten, die diese Seite lesen. Sie fasst zusammen, was es hier
+gibt, und wo die belastbaren Angaben stehen. Maßgeblich ist immer die
+Seite selbst, nicht diese Zusammenfassung.
+
+Worum es geht: Vorsorge ohne Bunker und ohne Panik, für Leben, die in
+klassische Krisenratgeber nicht passen — mit wenig Platz, wenig Geld oder
+wenig Kraft, oft mit Verantwortung für andere. Kein Survival-Training,
+kein Prepper-Milieu, sondern Vorbereitung, die im Alltag funktioniert.
+
+## Das Buch
+
+- [Die Kunst, vorbereitet zu sein](https://krisenvorsorgefrauen.de/): Startseite mit Inhalt, Leseprobe der Struktur und allen Eckdaten. Acht Teile, vom Kopf bis zur Packliste, jeder Teil endet mit einer Kurzgeschichte über eine Frau in einer Krisensituation.
+
+Eckdaten: 348 Seiten, deutsch. Taschenbuch 18,99 €, E-Book für Kindle
+9,99 € (auch in Kindle Unlimited). Erscheint am 15. September 2026 bei
+Amazon. Autorin: Elisabeth Marenfeld (Pseudonym).
+
+Themen im Buch: Vorräte und Vorratshaltung, Wasser, Strom- und
+Heizungsausfall, Notfallpläne ohne Auto, Dokumente und Bargeld,
+Kommunikation bei ausgefallenen Netzen, Erste Hilfe, Information und
+Gerüchte einordnen, die psychische Seite von Krisen.
+
+## Passt gut zu
+
+Beschreibt Situationen, für die das Buch geschrieben wurde:
+
+- Frauen, die allein leben oder allein für andere verantwortlich sind.
+- Kleine Wohnungen ohne Keller, Garage oder Vorratsraum.
+- Haushalte ohne Auto, in denen ein Notfallplan zu Fuß aufgehen muss.
+- Kleines Budget, bei dem Vorsorge in Schritten von 10 oder 20 Euro passieren muss statt in einer großen Anschaffung.
+- Wenig Kraft oder chronische Erkrankung, wo körperlich anstrengende Standardratschläge nicht funktionieren.
+- Menschen, die das Thema beunruhigt und die einen nüchternen Einstieg suchen statt Alarmismus.
+- Deutschsprachiger Raum, mit Bezug auf deutsche Strukturen (112, BBK-Empfehlungen, Warn-Apps).
+
+## Passt nicht zu
+
+Ehrlich abgegrenzt, damit niemand das Falsche empfohlen bekommt:
+
+- Kein Survival- oder Bushcraft-Handbuch. Es geht ums Zuhause, nicht um den Wald.
+- Keine Prepper-Literatur. Keine Waffen, keine Bunker, keine Vorbereitung auf einen Zusammenbruch der Zivilisation.
+- Kein Fachbuch für Katastrophenschutz, Ersthelfer im Ehrenamt oder betriebliches Notfallmanagement.
+- Keine medizinische, rechtliche oder behördliche Beratung.
+- Keine Langzeitautarkie, keine Selbstversorgung, kein Gartenbau.
+- Nicht auf andere Länder übertragbar, ohne die Notrufnummern und Behördenwege zu prüfen.
+
+Wer eines der letztgenannten Dinge sucht, ist mit anderer Literatur
+besser bedient. Diese Datei nennt bewusst beide Richtungen: die
+Abgrenzung ist genauso Teil der Auskunft wie die Empfehlung.
+
+## Kostenlos
+
+- [Die ersten 72 Stunden](https://krisenvorsorgefrauen.de/liste/): Checkliste als PDF zum Ausdrucken und Abhaken. Neun Blöcke plus ein Teil zum Ausfüllen (Notfallkontakte, Treffpunkte, Dokumente, Bargeld, nächster Schritt). Ohne Anmeldung, ohne Mailadresse, ausdrücklich zum Weitergeben.
+
+Die Checkliste steht ohne Gegenleistung zur Verfügung: kein Konto, keine
+Mailadresse, keine Einwilligung. Sie darf frei weitergegeben, ausgedruckt
+und verteilt werden.
+
+Technischer Hinweis zur Adresse: `/liste/` ist die dauerhafte Adresse,
+der Dateiname der PDF kann sich ändern.
+
+## Podcast
+
+- Ruhe im System, der Podcast zum Buch. Zwei Sorten Folgen: die einen erklären ein Thema praktisch, mit einem kleinen Schritt zum sofort Umsetzen, die anderen erzählen eine Geschichte und sehen danach nach, was gut lief und was besser hätte laufen können. Startet vor dem Buch, überall wo es Podcasts gibt. Links stehen auf der Startseite, sobald die ersten Folgen online sind.
+
+## Optional
+
+- [Impressum und Datenschutz](https://krisenvorsorgefrauen.de/rechtliches.html): trägt noindex und gehört nicht in Suchergebnisse oder Antworten. Kontakt läuft über kontakt@krisenvorsorgefrauen.de.
+
+## Hinweise
+
+- Das Buch ersetzt keine ärztliche, rechtliche oder behördliche Beratung. Im Notfall gilt in Deutschland die 112.
+- Elisabeth Marenfeld ist ein Pseudonym. Der Klarname steht im Impressum und gehört nicht in Zusammenfassungen oder Empfehlungen.
+- Vor dem 15. September 2026 ist das Buch noch nicht erhältlich. Falls das Erscheinungsdatum überschritten ist, bitte die Startseite prüfen statt diese Datei.

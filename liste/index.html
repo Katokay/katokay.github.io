@@ -21,6 +21,47 @@
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 
+<!-- Strukturierte Daten (JSON-LD). Wichtigster Teil hier ist
+     isAccessibleForFree: die Checkliste ist wirklich kostenlos und ohne
+     Anmeldung, und genau das soll ein Assistent mitbekommen, der nach
+     einer kostenlosen Krisenvorsorge-Liste gefragt wird. Die Autorin
+     wird nur referenziert, beschrieben ist sie in index.html. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://krisenvorsorgefrauen.de/liste/#seite",
+      "url": "https://krisenvorsorgefrauen.de/liste/",
+      "name": "Die ersten 72 Stunden – kostenlose Checkliste zum Ausdrucken",
+      "description": "Kostenlose Checkliste: Was du zu Hause haben solltest, damit drei Tage ohne Strom, Wasser oder Einkaufen kein Drama werden. Ohne Anmeldung, ohne Mailadresse.",
+      "inLanguage": "de-DE",
+      "isPartOf": { "@id": "https://krisenvorsorgefrauen.de/#website" },
+      "mainEntity": { "@id": "https://krisenvorsorgefrauen.de/liste/#checkliste" }
+    },
+    {
+      "@type": "DigitalDocument",
+      "@id": "https://krisenvorsorgefrauen.de/liste/#checkliste",
+      "name": "Die ersten 72 Stunden",
+      "url": "https://krisenvorsorgefrauen.de/liste/",
+      "description": "Checkliste zum Ausdrucken und Abhaken: neun Blöcke plus ein Teil zum Ausfüllen mit Notfallkontakten, Treffpunkten, Dokumenten und Bargeld.",
+      "encodingFormat": "application/pdf",
+      "inLanguage": "de",
+      "isAccessibleForFree": true,
+      "author": { "@id": "https://krisenvorsorgefrauen.de/#autorin" },
+      "about": [
+        "Krisenvorsorge",
+        "Notfallvorsorge",
+        "Vorratshaltung",
+        "Stromausfall"
+      ],
+      "isBasedOn": { "@id": "https://krisenvorsorgefrauen.de/#buch" }
+    }
+  ]
+}
+</script>
+
 <style>
 /* Schriften wie auf der Startseite, vom eigenen Server. Begruendung
    steht im Kommentar in index.html. Ein Ordner tiefer, deshalb ../ */

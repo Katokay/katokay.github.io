@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Nur die beiden Seiten, die in die Suche sollen. rechtliches.html und
+  404.html tragen noindex und gehoeren deshalb nicht hierher: eine
+  Sitemap, die noindex-Seiten meldet, widerspricht sich selbst.
+
+  lastmod bei einer inhaltlichen Aenderung mitziehen, sonst weglassen.
+  Ein Datum, das nicht stimmt, ist schlechter als gar keins - Google
+  ignoriert lastmod komplett, sobald es einer Domain nicht mehr glaubt.
+
+  changefreq und priority stehen absichtlich nicht drin, Google wertet
+  beides seit Jahren nicht mehr aus.
+
+  Nach jeder Aenderung: Search Console -> Sitemaps -> erneut einreichen.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://krisenvorsorgefrauen.de/</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://krisenvorsorgefrauen.de/liste/</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+
+</urlset>

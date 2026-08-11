@@ -17,6 +17,89 @@
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 
+<!-- Strukturierte Daten (JSON-LD). Beschreibt Buch, Autorin und Seite in
+     der Form, die Suchmaschinen und KI-Assistenten auswerten. Achtung,
+     das ist eine zweite Stelle mit denselben Zahlen: aendern sich Preis,
+     Seitenzahl oder Erscheinungsdatum weiter unten im sichtbaren Text,
+     muessen sie hier mit. Autorin bewusst nur als Pseudonym, der
+     Klarname steht ausschliesslich im Impressum.
+     Pruefen laesst sich das Ganze unter validator.schema.org. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://krisenvorsorgefrauen.de/#website",
+      "url": "https://krisenvorsorgefrauen.de/",
+      "name": "Die Kunst, vorbereitet zu sein",
+      "description": "Praxisnahe Krisenvorsorge für Frauen. Ohne Panik, ohne Bunker im Keller.",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://krisenvorsorgefrauen.de/#autorin",
+      "name": "Elisabeth Marenfeld",
+      "jobTitle": "Autorin",
+      "url": "https://krisenvorsorgefrauen.de/#autorin",
+      "image": "https://krisenvorsorgefrauen.de/bilder/autorin.webp",
+      "description": "Keine Survival-Expertin, sondern die Perspektive einer normalen Frau, die 2020 zwischen leeren Regalen stand. Schreibt über Vorsorge für Frauen, deren Leben nicht in die üblichen Krisenratgeber passt."
+    },
+    {
+      "@type": "Book",
+      "@id": "https://krisenvorsorgefrauen.de/#buch",
+      "name": "Die Kunst, vorbereitet zu sein",
+      "alternativeHeadline": "Praxisnahe Krisenvorsorge für Frauen",
+      "url": "https://krisenvorsorgefrauen.de/",
+      "image": "https://krisenvorsorgefrauen.de/cover-front-web.jpg",
+      "description": "Krisenvorsorge für Frauen, ohne Panik und ohne Bunker im Keller. Acht Teile vom Kopf bis zur Packliste, jeder mit einer Kurzgeschichte über eine Frau in einer Krisensituation, dazu ein Anhang mit Checklisten zum Abhaken.",
+      "author": { "@id": "https://krisenvorsorgefrauen.de/#autorin" },
+      "inLanguage": "de",
+      "genre": "Ratgeber",
+      "numberOfPages": 348,
+      "datePublished": "2026-09-15",
+      "about": [
+        "Krisenvorsorge",
+        "Notfallvorsorge",
+        "Vorratshaltung",
+        "Stromausfall",
+        "Notfallplanung",
+        "Selbstfürsorge"
+      ],
+      "workExample": [
+        {
+          "@type": "Book",
+          "name": "Die Kunst, vorbereitet zu sein (Taschenbuch)",
+          "bookFormat": "https://schema.org/Paperback",
+          "inLanguage": "de",
+          "numberOfPages": 348,
+          "datePublished": "2026-09-15",
+          "offers": {
+            "@type": "Offer",
+            "price": "18.99",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/PreOrder"
+          }
+        },
+        {
+          "@type": "Book",
+          "name": "Die Kunst, vorbereitet zu sein (E-Book)",
+          "bookFormat": "https://schema.org/EBook",
+          "inLanguage": "de",
+          "datePublished": "2026-09-15",
+          "offers": {
+            "@type": "Offer",
+            "price": "9.99",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/PreOrder"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 <style>
 /* =================================================================
    SCHRIFTEN
@@ -467,6 +550,23 @@ header.gescrollt .kopf{padding-top:11px;padding-bottom:11px}
 }
 .fuerwen b{font-weight:600}
 
+/* Die Gegenprobe zur Fuer-wen-Liste: was das Buch ausdruecklich nicht
+   ist. Bewusst als Entwarnung formuliert und nicht als Ausschluss - wer
+   bis hierhin gelesen hat, soll aufatmen, nicht abgewiesen werden.
+   Deshalb auch kein Kasten und keine zweite Liste: eine zweite Aufzaehlung
+   direkt unter der ersten wuerde optisch wie eine Absage wirken. Ein
+   Absatz mit Akzentstrich liest sich als Nachsatz.
+   Nebenbei liefert der Text Suchmaschinen und KI-Assistenten genau die
+   Begriffe, mit denen sich das Buch von Prepper- und Survival-Literatur
+   unterscheidet - die Abgrenzung ist der Teil, den sonst niemand ausschreibt. */
+.entwarnung{
+  margin:clamp(30px,4vw,44px) 0 0;
+  padding-left:clamp(18px,2.2vw,26px);
+  border-left:2px solid var(--akzent);
+}
+.entwarnung p{margin:0}
+.entwarnung p + p{margin-top:.8em}
+
 /* =================== TEXT MIT BILD =================== */
 /* Eine Zeile aus Text und einem hochformatigen Bild. Der Zickzack
    entsteht ueber .gedreht, das die Reihenfolge tauscht - aber nur
@@ -851,6 +951,20 @@ footer p{font-size:.87rem;line-height:1.7}
       <li>Für <b>Menschen ohne Auto</b>, denen jeder Fluchtplan das Gegenteil unterstellt</li>
       <li>Für <b>Tage</b>, an denen die Kraft für große Projekte fehlt</li>
     </ul>
+
+    <!-- Die Gegenprobe. Gestaltung und Begruendung siehe CSS zu .entwarnung.
+         Bewusst durchgehend positiv formuliert, nach Teresas Einwand vom
+         11.08.: eine Aufzaehlung wie "keine Waffen, keine Bunker" traegt
+         die Abgrenzung nur fuer Menschen. Die Stichwortsuche kennt keine
+         Verneinung, und Embedding-Modelle bilden "X" und "nicht X" dicht
+         nebeneinander ab - der Absatz koennte also ausgerechnet bei den
+         Anfragen auftauchen, von denen er sich abgrenzen will. Ein
+         Gegensatzpaar ("Wohnung, nicht Wald") ist auf jeder Stufe
+         eindeutig und liest sich obendrein waermer. -->
+    <div class="entwarnung" data-reveal data-verzug="2">
+      <p class="gross">Und keine Sorge: Es geht hier um Ihre Wohnung, nicht um den Wald. Um ein Regal, in dem etwas mehr steht als sonst. Um einen Plan, den Sie einmal in Ruhe durchdacht haben. Um einen Kanister Wasser, der einfach da ist.</p>
+      <p class="leise">Vorbereitet sein heißt nicht, sich auf das Schlimmste einzustellen. Es heißt, eine Sorge weniger zu haben.</p>
+    </div>
   </div>
 </section>
 

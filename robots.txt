@@ -1,0 +1,16 @@
+# robots.txt fuer krisenvorsorgefrauen.de
+#
+# Alle Crawler duerfen alles lesen, KI-Crawler eingeschlossen. Auf der
+# Seite steht Werbetext, nicht das Buch. Wer nicht gelesen werden darf,
+# kann auch nicht empfohlen werden.
+#
+# Bewusst kein Disallow fuer /rechtliches.html und /404.html: beide
+# tragen ihr noindex im Head der Seite. Ein Disallow waere hier sogar
+# schaedlich, weil ein gesperrter Crawler das noindex nie zu sehen
+# bekommt - die Adresse landet dann trotzdem in der Trefferliste, nur
+# ohne Text darunter.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://krisenvorsorgefrauen.de/sitemap.xml
