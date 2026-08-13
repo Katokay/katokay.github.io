@@ -265,7 +265,8 @@ header.gescrollt .kopf{padding-top:11px;padding-bottom:11px}
   font-family:var(--display);font-size:1.08rem;line-height:1.25;
   color:var(--text);text-decoration:none;letter-spacing:.005em;
 }
-.marke b{font-weight:400;color:var(--akzent-text);font-style:italic}
+/* Kursiv statt Koralle, aus demselben Grund wie im Hero (siehe dort). */
+.marke b{font-weight:400;font-style:italic}
 .kopf nav{display:flex;gap:clamp(14px,2.6vw,30px);flex-wrap:wrap}
 .kopf nav a{
   position:relative;color:var(--text);text-decoration:none;
@@ -304,8 +305,11 @@ header.gescrollt .kopf{padding-top:11px;padding-bottom:11px}
 
 .hero h1{margin-bottom:.28em;color:#fff}
 .hero h1 span{display:block}
-/* Koralle-Zeile wie auf dem Cover */
-.hero h1 em{font-style:normal;color:var(--koralle);display:block}
+/* Kursiv wie auf dem Cover. Bis zum 13.08. stand die Zeile in Koralle -
+   das war die Spiegelung der damaligen Cover-Wortmarke. Seit das Cover
+   den Titel komplett in Schwarz setzt, hebt Kursiv die Zeile hervor,
+   ohne eine Farbe zu behaupten, die es auf dem Buch nicht mehr gibt. */
+.hero h1 em{font-style:italic;display:block}
 .hero .unter{
   font-size:.82rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(250,246,240,.62);margin-bottom:1.7em;max-width:none;
