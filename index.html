@@ -629,6 +629,10 @@ header.gescrollt .kopf{padding-top:11px;padding-bottom:11px}
   font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
   color:var(--koralle);margin-bottom:20px;
 }
+/* Die Knopfreihe unter dem Podcast-Text. Umbricht auf schmalen Schirmen,
+   damit drei Verzeichnisse nebeneinander nicht aus dem Raster laufen. */
+.podcast-knoepfe{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 18px}
+.podcast-knoepfe .btn{padding:13px 24px;font-size:.88rem}
 
 /* =================== FUSS =================== */
 /* Der Fuss ist seit dem 10.08. schlank: Impressum und Datenschutz
@@ -1017,7 +1021,7 @@ footer p{font-size:.87rem;line-height:1.7}
   </div>
 </section>
 
-<!-- ===================== PODCAST (Platzhalter) ===================== -->
+<!-- ===================== PODCAST ===================== -->
 <section id="podcast" class="dunkel">
   <div class="wrap">
     <div class="bald" data-reveal>
@@ -1030,12 +1034,25 @@ footer p{font-size:.87rem;line-height:1.7}
                alt="Cover des Podcasts „Ruhe im System – Krisenvorsorge für Frauen“, Der Podcast zum Buch „Die Kunst, vorbereitet zu sein“.">
         </figure>
         <div>
-          <span class="marke-bald">Bald</span>
+          <span class="marke-bald">Neue Folgen montags</span>
           <h2 style="margin-top:0">Ruhe im System</h2>
           <p>Der Podcast zum Buch. Zwei Sorten Folgen: die einen erklären ein Thema ganz praktisch, mit einem kleinen Schritt, den Sie sofort gehen können. Die anderen erzählen eine Geschichte über eine Frau in einer Krisensituation, und danach schauen wir gemeinsam, was sie klug gemacht hat und was besser hätte laufen können.</p>
-          <!-- NACH DER VEROEFFENTLICHUNG: Buttons zu Spotify und Apple Podcasts hier einsetzen,
-               z.B. <a class="btn btn-hell" href="...">Bei Spotify hören</a> -->
-          <p class="klein" style="margin-bottom:0;opacity:.72">Überall, wo es Podcasts gibt. Sobald die ersten Folgen online sind, finden Sie sie auch hier.</p>
+          <!-- Bewusst nur Links, kein eingebetteter Abspieler. Ein Player von
+               letscast.fm waere ein fremder Server: er bekaeme die IP jeder
+               Besucherin und braeuchte damit einen Eintrag in der Datenschutz-
+               erklaerung, wahrscheinlich auch ein Einwilligungsbanner. Reine
+               Links kosten nichts davon. Wenn spaeter doch ein Player kommt,
+               dann als Klick-Loesung, die erst nach dem Klick nachlaedt.
+               OFFEN: Apple und Amazon Music sind eingereicht, aber noch nicht
+               freigeschaltet. Sobald die oeffentlichen Adressen da sind, hier
+               das href eintragen und aria-disabled entfernen. Bis dahin sind
+               die beiden Knoepfe ausgegraut und nicht klickbar. -->
+          <p class="podcast-knoepfe">
+            <a class="btn btn-hell" href="https://open.spotify.com/show/7rPPCsMsErLNyIxw0KhbrR">Bei Spotify hören</a>
+            <a class="btn btn-hell" href="#" aria-disabled="true">Bei Apple Podcasts hören</a>
+            <a class="btn btn-hell" href="#" aria-disabled="true">Bei Amazon Music hören</a>
+          </p>
+          <p class="klein" style="margin-bottom:0;opacity:.72">Überall, wo es Podcasts gibt. Wenn Sie lieber selbst abonnieren: <a href="https://letscast.fm/podcasts/ruhe-im-system-2b52f19c/feed">der RSS-Feed</a> lässt sich in jede Podcast-App einfügen.</p>
         </div>
       </div>
     </div>
